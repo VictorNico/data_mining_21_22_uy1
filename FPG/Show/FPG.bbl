@@ -1,0 +1,139 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{persoliriscnrs}{online}{}
+    \name{author}{1}{}{%
+      {{hash=DIDIL}{%
+         family={1},
+         familyi={\bibinitperiod},
+         given={Département Informatique Doua IUT\bibnamedelima Lyon},
+         giveni={D\bibinitperiod\bibinitdelim I\bibinitperiod D\bibinitperiod
+  I\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \keyw{minor}
+    \strng{namehash}{DIDIL1}
+    \strng{fullhash}{DIDIL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{1}
+    \field{sortinithash}{1}
+    \field{title}{Problème}
+    \verb{url}
+    \verb https://perso.liris.cnrs.fr/pierre-antoine.champin/enseignement/algo/
+    \verb cours/algo/probleme.html
+    \endverb
+  \endentry
+
+  \entry{softwaretestinghelp}{online}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={2021},
+         familyi={\bibinitperiod},
+         given={SOFTWARETESTINGHELP},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \keyw{minor}
+    \strng{namehash}{S1}
+    \strng{fullhash}{S1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \field{title}{Frequent Pattern (FP) Growth Algorithm In Data Mining}
+    \verb{url}
+    \verb https://www.softwaretestinghelp.com/fp-growth-algorithm-data-mining/
+    \endverb
+  \endentry
+
+  \entry{USDB}{book}{}
+    \name{author}{1}{}{%
+      {{hash=eKADZ}{%
+         prefix={et},
+         prefixi={e\bibinitperiod},
+         family={KERIOUI\bibnamedelima Abderrahim},
+         familyi={K\bibinitperiod\bibinitdelim A\bibinitperiod},
+         given={DAAOU\bibnamedelima Zeneddine},
+         giveni={D\bibinitperiod\bibinitdelim Z\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {République Algérienne Démocratique et Populaire, Ministère de
+  l'Enseignement Supérieur et de la Recherche Scientifique}%
+    }
+    \keyw{major}
+    \strng{namehash}{KADZe1}
+    \strng{fullhash}{KADZe1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{pages}{50\bibrangedash 55}
+    \field{title}{Extractions des motifs fréquents orientés besoins du
+  décideur.}
+  \endentry
+
+  \entry{towardsdatascience}{online}{}
+    \name{author}{1}{}{%
+      {{hash=KJ}{%
+         family={Korstanje},
+         familyi={K\bibinitperiod},
+         given={Joos},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \keyw{major}
+    \strng{namehash}{KJ1}
+    \strng{fullhash}{KJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{title}{The FP Growth algorithm}
+    \verb{url}
+    \verb https://towardsdatascience.com/the-fp-growth-algorithm-1ffa20e839b8
+    \endverb
+  \endentry
+
+  \entry{mygreatlearning}{online}{}
+    \name{author}{1}{}{%
+      {{hash=LG}{%
+         family={Learning},
+         familyi={L\bibinitperiod},
+         given={Great},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \keyw{minor}
+    \strng{namehash}{LG1}
+    \strng{fullhash}{LG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Understanding (Frequent Pattern) FP Growth Algorithm | What
+  is FP Algorithm?}
+    \verb{url}
+    \verb https://www.mygreatlearning.com/blog/understanding-fp-growth-algorith
+    \verb m/
+    \endverb
+  \endentry
+\enddatalist
+\endinput

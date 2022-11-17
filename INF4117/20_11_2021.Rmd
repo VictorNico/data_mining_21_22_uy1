@@ -1,0 +1,51 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+
+```{r}
+D = data.frame(
+    individu=c('w1','w2','w3','w4','w5'),
+    x1=c(2.5,7.9,3.8,1.2,NA),
+    x2=c(2.1,4.3,NA,5.1,4.3),
+    classe=c('A','B','B','A','A')
+)
+D
+```
+
+```{r}
+
+D[is.na(D$x1), "x1"] <- mean(D$x1, na.rm = T)
+D
+```
+
+```{r}
+getmode <- function(v){
+  uniqv <- unique(v)
+  uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+#getmode(D$x20)
+D[is.na(D$x2), "x2"] <- getmode(D$x2)
+D
+```
+
+
+```{r}
+Mesure <- function(M){
+  p = 0
+  classe = Dim(M)[1]
+  for(i in 1:class){
+    p <- p + M[i,i]/sum(M[,i])
+  }
+  p <- p/classe
+  r <- 0
+  for(i in 1:class){
+    r <- r + M[i,i]/sum(M[,i])
+  }
+  fm <- 0
+  
+  return (c(p,r,fm))
+}
+```

@@ -1,0 +1,28 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {french}{}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {2}{Introduction}{3}{0}{1}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {3}{D\IeC {\'e}finitions}{5}{0}{2}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {4}{classification d'algorithme d'extraction de motifs fr\IeC {\'e}quents}{7}{0}{3}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {5}{Probl\IeC {\`e}me}{8}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {5}{1}{\IeC {\'E}nonc\IeC {\'e}}{8}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {5}{2}{Exemple d'application r\IeC {\'e}el}{9}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {6}{Solution propos\IeC {\'e}e}{11}{0}{5}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {6}{1}{Principe}{11}{0}{5}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {6}{2}{Algorithme}{13}{0}{5}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {6}{3}{Limites}{14}{0}{5}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {7}{Exemple}{15}{0}{6}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {8}{R\IeC {\'e}sum\IeC {\'e}}{23}{0}{7}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {10}{Remerciement}{26}{0}{8}
