@@ -1,0 +1,611 @@
+.container-fluid {
+  padding: 0;
+}
+
+#myoverlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  z-index: 20;
+  background: rgba(0,0,0,0.9);
+}
+
+#youtubeplayer {
+  position: absolute;
+  top: 70px;
+  left: 474px;
+  z-index: 30;
+}
+#youtube_close {
+  position: absolute;
+  top: 44px;
+  LEFT: 1090px;
+  width: 50px;
+  z-index: 30;
+  cursor: pointer;
+}
+
+#youtube_close:hover {
+  opacity: 0.9;
+}
+
+
+#back_to_welcome {
+  float: left;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+#linehome,
+#lineaway {
+    z-index: 2;
+    top: 108px;
+    position: absolute;
+    height: 50px;
+    display: none;
+}
+
+#deltaline1 {
+  top: 0;
+}
+#deltaline2 {
+  bottom: -10px;
+}
+.deltaline {
+  height: 10px;
+  position: absolute;
+  background: #bbb;
+  border: 1px solid #666;
+  transition: left 250ms;
+}
+.deltaline:before, .deltaline:after {
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.deltaright .deltaline:after {
+  left: 100%;
+  border-left-color: #bbb;
+  border-width: 9px;
+  margin-top: -9px;
+}
+.deltaright .deltaline:before {
+  left: 100%;
+  border-left-color: #333;
+  border-width: 9px;
+  margin-top: -9px;
+}
+.deltaleft .deltaline:after {
+  right: 100%;
+  border-right-color: #bbb;
+  border-width: 9px;
+  margin-top: -9px;
+}
+.deltaleft .deltaline:before {
+  right: 100%;
+  border-right-color: #333;
+  border-width: 9px;
+  margin-top: -9px;
+}
+.deltanone .deltaline {
+  display: none;
+}
+
+#game_page.ishome #linehome{
+  display: block;
+  left: 0;
+}
+#game_page.isaway #lineaway{
+  display: block;
+  right: 0;
+}
+#game_page.ishome #action-bar-awaylogo {
+  opacity: 0.5;
+}
+#game_page.isaway #action-bar-homelogo {
+  opacity: 0.5;
+}
+#game_page.isaway #action-bar-awaylogo {
+  transform: scale(1.2);
+}
+#game_page.ishome #action-bar-homelogo {
+  transform: scale(1.2);
+}
+#back_to_welcome:hover {
+  text-decoration: underline;
+}
+
+/* Welcome page */
+#welcome_page {
+  z-index: 3;
+  position: relative; 
+}
+#welcome_homevsaway {
+  text-align: center;
+  color: #fafafa;
+  font-size: 50px;
+}
+#welcome_home,
+#welcome_away {
+  background: #444;
+  display: inline-block;
+  padding: 10px 25px;
+  
+}
+#welcome_vs {
+  display: inline-block;
+  background: red;
+  padding: 10px 15px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.welcome_homename,
+.welcome_awayname,
+.welcome_homeimgwrap,
+.welcome_awayimgwrap,
+.welcome_date {
+  display: inline-block;
+}
+.welcome_date {
+  width: 160px;
+}
+.welcome_homeimgwrap,
+.welcome_awayimgwrap {
+  width: 150px;
+}
+.welcome_homename,
+.welcome_awayname {
+  width: 200px;
+  font-weight: bold;
+}
+
+.welcome_row {
+  margin-top: 15px;
+  background: #444;
+  text-align: center;
+  color: white;
+  font-style: italic;
+  font-size: 16px;
+  box-shadow: 0 0 5px black;
+  border: 2px solid #222;
+  border-width: 2px 0;
+  padding: 7px 0;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.welcome_row:hover {
+  background: #888;
+  transform: scale(1.2);
+}
+
+.welcome_homeimg,
+.welcome_awayimg {
+  height: 50px;
+}
+
+/* Game page */
+
+#canvas-wrap {
+  position: relative;
+  width: 800px;
+  padding-top: 10px;
+  margin-top: 20px;
+}
+
+#time-wrapper {
+  position: relative;
+  width: 800px;
+  margin-bottom: 50px;
+}
+#action-bar-homelogo {
+  height: 50px;
+  position: absolute;
+  left: -100px;
+  top: 61px;
+  transition: all 200ms;
+}
+
+#action-bar-awaylogo {
+  height: 50px;
+  position: absolute;
+  left: -100px;
+  top: 129px;
+  transition: all 200ms;
+}
+
+#time-wrapper span.irs-min,
+#time-wrapper span.irs-max,
+#time-wrapper span.irs-single {
+  display: none;
+}
+
+#downline {
+  position: absolute;
+  top: 0;
+  bottom: -10px;
+  width: 6px;
+  background: orange;
+  box-shadow: 1px 1px 6px black;
+  transition: left 250ms;
+}
+
+#downline2 {
+  position: absolute;
+  top: 0;
+  bottom: -10px;
+  width: 3px;
+  background: orange;
+  box-shadow: 1px 1px 6px black;
+  transition: left 250ms;
+}
+
+#action-bar-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 50px;
+  margin-top: 0;
+}
+
+#time-wrapper .irs-bar,
+#time-wrapper .irs-bar-edge,
+#time-wrapper .irs-line {
+  height: 10px;
+}
+
+#time-wrapper .irs-bar-edge {
+  border-right: 0 none !important;
+}
+
+#time-wrapper .irs-slider {
+  background: #222;
+  top: 18px;
+  width: 24px;
+  height: 24px;
+  border-color: #111;
+  z-index: 10;
+}
+
+#time-wrapper .irs-slider:hover {
+  background: #222;
+}
+
+#time-wrapper .irs-bar {
+  border-top: 1px solid #555;
+  border-bottom: 1px solid #555;
+  background: #777;
+}
+
+#time-wrapper .irs-bar-edge {
+  border: 1px solid #555;
+  background: #777;
+}
+
+.mybtn-pressed {
+  background: #333 !important;
+  color: #fff !important;
+}
+
+#home_events,
+#away_events {
+  position: relative;
+}
+
+.gameevent {
+  position: absolute;
+  width: 6px;
+  margin-left: -3px;
+  transition: all .2s ease-in-out;
+  z-index: 3;
+  opacity: 0.6;
+  cursor: pointer;
+}
+.gameevent:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 3px #777;
+  opacity: 1;
+}
+
+.gameevent.event-home {
+  margin-bottom: -25px;
+  bottom: 0;
+  border-radius: 4px 4px 0 0;
+}
+.gameevent.event-away {
+  margin-top: 35px;
+  top: 0;
+  border-radius: 0 0 4px 4px;
+}
+
+.gameevent.event-Rush {
+  background: orange;
+  display: none;
+}
+.gameevent.event-Pass {
+  background: blue;
+  display: none;
+}
+.gameevent.event-Score {
+  background: red;
+  display: none;
+}
+#time-wrapper.show-Rush .event-Rush {
+  display: block;
+}
+#time-wrapper.show-Pass .event-Pass {
+  display: block;
+}
+#time-wrapper.show-Score .event-Score {
+  display: block;
+}
+
+/* Base styles for the entire tooltip */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  position: absolute;
+  visibility: hidden;
+  transition: visibility 0.2s ease-in-out;
+  transition-delay: 0s !important;
+}
+
+/* Show the entire tooltip on hover and focus */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after{
+  visibility: visible;
+  transition-delay: 0.5s !important;
+}
+
+[data-tooltip]:before {
+  z-index: 1001;
+  border: 6px solid transparent;
+  background: transparent;
+  content: "";
+}
+
+[data-tooltip]:after {
+  z-index: 1000;
+  padding: 8px;
+  width: 160px;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 15;
+  color: #fff;
+  content: attr(data-tooltip);
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+[data-tooltip]:before,
+[data-tooltip]:after {
+  bottom: 100%;
+  left: 50%;
+}
+
+[data-tooltip]:before {
+  margin-left: -6px;
+  margin-bottom: -12px;
+  border-top-color: #000;
+  border-top-color: rgba(0, 0, 0, 0.9);
+  z-index: 15;
+}
+
+/* Horizontally align top/bottom tooltips */
+[data-tooltip]:after{
+  margin-left: -80px;
+}
+
+#buttons_row {
+  width: 800px;
+}
+
+#play {
+  width: 100px;
+  font-size: 16px;
+  font-weight: bold;
+  float: left;
+  margin-top: 10px;
+}
+
+#speed-wrap {
+  float: left;
+  margin-left: 25px;
+}
+
+#speed-wrap .irs-grid-pol.small {
+  display: none;
+}
+
+#speed-wrap .irs-grid {
+  height: 39px;
+}
+
+#speed-wrap .irs-grid-pol {
+  width: 2px;
+  border-color: black;
+  color: black;
+  background: black;
+}
+#speed-wrap .irs-grid-text {
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  top: 12px;
+}
+#speed-wrap .irs-grid-text:after {
+  content: "x";
+}
+#speed-wrap .irs-max,
+#speed-wrap .irs-min {
+  display: none;
+}
+#speed-wrap .irs-bar,
+#speed-wrap .irs-bar-edge {
+  display: none;
+}
+#speed-wrap .irs-single {
+  display: none;
+}
+#speed-wrap .irs-line {
+  height: 4px;
+  border-color: black;
+  top: 17px;
+  background: #333;
+}
+
+#speed-wrap .irs-slider {
+  top: 9px;
+  width: 18px;
+  height: 18px;
+  background: #222;
+  border-color: #000;
+}
+#speed-wrap .irs-slider:hover {
+  background: #222;
+}
+
+#eventTypeFilter {
+  float: right;
+  padding-top: 3px;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0 0 1px white;
+}
+
+#eventTypeFilter input[type=checkbox] {
+  margin-top: 7px;
+}
+#eventTypeFilter input[type=checkbox] {
+  margin-top: 7px;
+}
+
+#eventTypeFilter label.checkbox-inline:nth-child(1) span {
+  color: blue;
+}
+#eventTypeFilter label.checkbox-inline:nth-child(2) span {
+  color: orange;
+}
+#eventTypeFilter label.checkbox-inline:nth-child(3) span {
+  color: red;
+}
+
+/* Tony's styling */
+
+.malign {
+  vertical-align: middle;
+}
+
+#nav-bar {
+  background-color: #bdbdbd;
+  overflow: hidden;
+  padding: 13px 0;
+  text-align: center;
+  color: #252525;
+  font-size: 30px;
+}
+
+#matchups {
+  margin: -15px 0;
+}
+
+#homename, #homelogo, #homescore, #game_time, #awayscore, #awaylogo, #awayname {
+  display: inline-block;
+}
+
+#homescore, #awayscore {
+  background: #444;
+  padding: 20px;
+  color: #eee;
+  font-style: italic;
+  font-size: 35px;
+  width: 120px;
+}
+
+#game_time {
+  background: red;
+  padding: 11px;
+  font-size: 20px;
+  font-weight: bold;
+  margin: -10px;
+  color: #eee;
+  text-shadow: 2px 2px 4px #444;
+}
+
+#output_quarter {
+  font-size: 20px;
+}
+#output_time {
+  font-size: 26px;
+}
+
+.team-logo {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+
+.auto-margin {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.full-width {
+  width:100%;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fafafa;
+  padding: 3px;
+  text-align: center;
+  border-top: 1px solid #E7E7E7;
+  box-shadow: 0px 0px 5px #333;
+  z-index: 100;
+}
+
+#bg_youtube_player {
+  overflow: hidden;
+  position: fixed;
+  opacity:0.8;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+#welcome_message {
+  width: 1000px;
+  /*background: rgba(200,200,200,0.7);*/
+  margin: 200px auto 70px;
+  text-shadow: 4px 3px 6px black;
+  font-size: 80px;
+  color: #F9F9F9;
+  /*padding: 15px;
+  text-align: center;
+  font-weight: bold;*/
+}
+#welcome_message span {
+  font-weight: bolder;
+  color: rgb(255, 202, 0);
+}
+
+#welcome_list {
+  margin-bottom: 50px;
+}
+
+#youtube_shield {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}

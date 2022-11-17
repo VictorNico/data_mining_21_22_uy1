@@ -1,0 +1,47 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+data <- iris
+km <- kmeans(data[,-5], 3)
+```
+
+```{r}
+print(km)
+```
+
+```{r}
+plot(km$centers,col=km$centers)
+```
+
+
+
+```{r}
+points(km$cluster,col=1:2)
+```
+
+
+
+                                 
+```{r}
+plot(data[c('Petal.Length','Sepal.Width')],col=km$cluster)
+# use graph manipulation to extract relate classe information after such as locator, identify,...
+```
+
+
+```{r}
+library(cluster)
+# load temperature frnace
+df <- read.csv('temperat.csv',sep = ';', header=TRUE, row.names = 1, stringsAsFactors = FALSE)
+#print(df[,1:12])
+# apply agnes
+hac <- agnes(df[,c(2:13)])
+plot(hac)
+```
+
+```{r}
+
+```

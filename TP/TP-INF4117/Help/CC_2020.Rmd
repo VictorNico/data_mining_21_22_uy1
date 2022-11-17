@@ -1,0 +1,51 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+V <- c(10,5,6,NA,8,1,2,3,NA)
+which(is.na(V))
+V[c(1:5,7,8)]
+var(V,na.rm = TRUE)
+D = data.frame(No=c(1,2,3),Nom=c("Toto","Atangana","Kamdem"),Pernom=c("Paul","Ide","Karl"),Age=c(21,23,18))
+D
+norm_z_score <- function(V){
+  V[is.na(V)]<- mean(V, na.rm=TRUE)
+  #calcul de la normalisation
+  return ((V-mean(V))/sd(V))
+}
+norm_z_score(V)
+
+
+norm_min_max <- function(V){
+  V[is.na(V)]<- mean(V, na.rm=TRUE)
+  #calcul de la normalisation
+  return (
+         
+           (V-min(V))/(max(V)-min(V))
+           
+    )
+}
+norm_min_max(V)
+graphy <- function(x,y){
+  if(length(x) == length(y)){
+    plot(x,y,type="l")
+    point <- locator(4,type = "p", col = "blue")
+  }
+}
+
+c = graphy(1:10,2:11)
+```
+
+
+```{r}
+norm_min_max <- function(V, min= 0, max= 1){
+  V[is.na(V)]<- mean(V, na.rm=TRUE)
+  #calcul de la normalisation
+  return (
+         ((V-min(V))/(max(V)-min(V)))*(max-min)
+    )
+}
+norm_min_max(V)
+```

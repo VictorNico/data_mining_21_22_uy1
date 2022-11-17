@@ -1,0 +1,20 @@
+body {
+  background: #FCFCFC;
+  padding: 10px 20px;
+}
+
+.mandatory_star {
+  color: red;
+}
+
+#error {
+  color: red;
+}
+
+#adminPanelInner {
+  background: #ffffff;
+  border: 8px solid #aaaaaa;
+  margin: 5px 0 15px;
+  border-radius: 5px;
+  padding: 0 20px 20px 20px;
+}

@@ -1,0 +1,326 @@
+---
+title: "22 November 2021"
+output:
+  html_notebook: default
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+
+# INFO 4117 : Data Mining ou Fouille de données
+
+\newpage
+
+#### Somaire
+
+I. [Introduction Générale](#introduction)
+
+  1. [Définition de Data Mining](#définition-de-data-mining)
+  
+  2. [Méthodes de Data Mining](#méthodes-de-data-mining)
+  
+  3. [Méthodes de Data Mining](#méthodes-de-data-mining)
+  
+  4. [Sorties du Data Mining](#sorties-du-data-mining)
+  
+  4. [Data Mining Versus Statistique Descriptive](#data-mining-versus-statistique-descriptive)
+  
+  4. [Data Mining : Etapes de mise en place](#data-mining---etapes-de-mise-en-place)
+
+\newpage
+
+## Introduction Générale
+
+### Définition de Data Mining
+  Le __Data Mining__ est le processus d'analyse massif de données et du big data sous différents angles afin d'identifier des relations entre les données et de les transformer en informations exploitable.
+
+### Méthodes de Data Mining
+  Ceci étant dit nous nous démandrons forcement quelles sont ses méthodes qui permettent d'identifier des relations. Nous verons dans la suite les méthodes suivantes:
+  
+> - **Règles d'associations**
+> - **Classification supervisée**
+> - **Classification non-supervisée**
+> - **Regression Lineaire.**
+
+### Données manipulées par le Data Mining
+  Aussi nous avons parlé de données, quelles sortes de données pouvons nous manipuler:
+    
+> - _Base de données relationnelle_
+> - _Base de données unifiées (Data warehouse)_
+> - _Données structurées (spatiales, graphes, text, web, ...)_
+> - _Base de données Objet-relationnel_
+> - _Base de données temporelle, sequentielles, Transactionnelles, ..._
+> - _multimedia_
+  
+### Sorties du Data Mining
+  Nous parlons de Data Mining, mais quelles sont les sorties attendu de celui?
+  
+> __descriptive Data Mining ou fouille descriptive__: qui est une technique de fouille de données qui permet de regrouper les données en entrées sous la forme (X) tel que ses sous groupes possèdent des attributs identiques en terme de valeur.
+
+>> * Résumé de données, cas extrême, évolution des donnés
+>> * Motifs fréquents, associations et corrélations
+>> * Partition des données
+
+> __predictive Data Mining ou fouille prédictive__: qui est une technique de fouille de données qui permet de partir des données existantes pour construire un modèle sous la forme (X,Y) permettant la représentation des classes.
+
+>> * Classification : caractérisation ou discrimination
+>> * Régression : valeur prédite continue.
+
+### Data Mining Versus Statistique Descriptive
+* Je pense qu'il est temps de faire un tout petit éclaircisement, de plus en plus, il y'a confusion entre statistique descriptive et data mining. La différence de base est:
+  * [x] __la statistique descriptive__ fait de l'analyse dite confirmatoire, c'est-à-dire qui réalise des analyses pas très complexe. Supposons le problème de profiles clientèle dans le markeing ciblé, l'analyse descriptive face à ce problème cherchera à le transformer en problème à valeurs d'opposition type "jeunes/sénior","citadins/ruraux", ... Ce qui n'est pas une solution optimale au problème.
+  * [x] __le data mining__ fait à son tour une analyse dite exploratoire donc la complexité est plus élévée difficile à resoudre au hazard.
+
+### Data Mining - Etapes de mise en place
+<br/>
+<br/>
+
+$$
+\mathbf{DataMining(Probleme)}
+=
+\begin{bmatrix}
+Business Understanding  \\
+\vdots  \\
+Data Understanding \\
+\vdots  \\
+Pretreatment\\
+\vdots  \\
+Modeling\\
+\vdots  \\
+Evaluation \\
+\vdots  \\
+Deployment \\
+\end{bmatrix}
+$$
+<p style="text-align:center; margin:auto; color:blue">Schéma Décrivant les étapes de la fouille de données en entreprise</p>
+
+$$
+\mathbf{DataMining(Probleme)}
+=
+\begin{bmatrix}
+Fouille-Proprement-dite (Application-des-algorithmes-de-fouille)  \\
+\vdots  \\
+Evaluation (Mésure-de-l'intérêt-des-connaissances-extraites) \\
+\vdots  \\
+Représentation-des-connaissances (visualisation-et-représentation)\\
+\end{bmatrix}
+$$
+<p style="text-align:center; margin:auto; color:blue">Schéma Décrivant les étapes de la fouille de données en réel</p>
+<br/>
+<hr>
++ __Business understanding (comprehension du domaine)__: c'est une phase pendant laquelle l'expert du domaine sera explorer le domaine pour déceller tous les secret.
++ __Data understanding__: c'est également une phase pendant laquelle l'expert du domaine devra recenser les données du système et leur importance.
++ __Pretreatment__: c'est la phase du DM(Data Mining) où démarre le travail de l'informaticien. Après avoir l'echangé avec l'expert du domaine, le groupe de data mining va devoir appliquer certains traitement sur le jeu de données porté à projet. Par prétraitement, nous entendons ___transformation de données(discrétisation de certains attributs), nettoyage de données(suppression de bruits, données inconsistantes), intégration de données(combinaision de plusieur sources),selection de données(pertinentes)___
++ __Modéling__: il s'ajout d'un prétraitement qui a pour but de rendre le jeu données compatible à l'algorithme à utiliser.
++ __Evalutaion__: il s'agit ici de déterminer à partir de la sortie de(s) algorithme(s) utilisé(s) si la connaissance extraite est pertinente.
++ __Deployment__: Il s'agit ici, de présenter le resultat de travail de fouille de données au près du client sous une forme visuelle et exploitable par lui.
+
+<hr>
+
+Nous allons ainsi donc nous appésentir sur les opérations de prétraitement qui sont d'une importance majeur dans tout le processus.
+<p style="text-align:center; margin:auto; color:red">Pourquoi le prétraitement de données???</p>
+* Les données réelles tendent à être incomplètes, bruitées ou inconsistantes. Le prétraitement propose des méthodes pour résoudre ses erreurs.
+* Opérations:
+  + Nettoyage de données
+  + Intégration de données
+  + Sélection  de données
+  + transformation de données
+  
+<p style="text-align:center; margin:auto; color:red">Nettoyage de données???</p>
+* Le **But** du nettoyage de données est de traiter les données manquantes et supprimer les bruits.
+* Une **Donnée manquante** est l'absence de valeur (donnée) pour un attribut décrivant l'objet.
+* **Bruit** erreur aléatoire introduite dans la mesure d'une donnée.
+
+1. **Traitement de données manquantes**
+
+
+
+```{r}
+# arules packages loading
+library('arules')
+
+# load iris data
+data('iris')
+
+# create our own iris data
+iris_vn <- iris
+## resume
+summary(iris_vn)
+
+# create a transaction
+## from matrix
+#a_matrix <- Matrix(c(1,1,1,0,0,1,1,0,0,0,1,1,0,1,0,0,0,1,0,1,1,1,0,1,1), ncol=5)
+#trans1a <- as(a_matrix, "transaction")
+
+#trans1 <- transactions(a_list)
+
+
+## from data frame
+a_df <- data.frame(
+  age=as.factor(c(6,8,7,6,9,5)),
+  grade=as.factor(c(1,3,1,1,4,1))
+)
+#install.packages('package-name',repos='http://cran.us.r-project.org')
+install.packages('arulesViz', dependencies = TRUE)
+
+```
+
+# Discretisation
+
+___C'est le fait de quitter d'une variable à valeurs réelles (infini) vers des variables à valeurs entiers (fini)___. _Comme exemple de discrétisation nous avons : 
+
+> __la Binarisation__ : qui est une méthode communement utilisée en datamining pendant le prétraitement de données.
+
+```{r}
+# discretize iris_vn
+iris_vn1 <- iris_vn
+iris_vn1[,4] <- discretize(iris_vn1[,4], breaks=3, quantile=FALSE, labels=c("short","medium","long"))
+iris_vn1[,3] <- discretize(iris_vn1[,3], breaks=3, quantile=FALSE, labels=c("short","medium","long"))
+iris_vn1[,2] <- discretize(iris_vn1[,2], breaks=3, quantile=FALSE, labels=c("short","medium","long"))
+iris_vn1[,1] <- discretize(iris_vn1[,1], breaks=3, quantile=FALSE, labels=c("short","medium","long"))
+trans <- transactions(iris_vn1)
+
+```
+
+# Règles d'association
+
+```{r}
+# rules in iris_vn trans
+rules <- apriori(trans,parameter = list(supp = 0.1, conf = 0.7, target = "rules"))
+inspect(rules)
+
+frequent_itemsets <- apriori(trans,parameter = list(supp = 0.1, conf = 0.7, target = "frequent itemsets"))
+inspect(frequent_itemsets)
+
+closed_frequent_itemsets <- apriori(trans,parameter = list(supp = 0.1, conf = 0.7, target = "closed frequent itemsets"))
+inspect(closed_frequent_itemsets)
+
+maximally_frequent_itemsets <- apriori(trans,parameter = list(supp = 0.1, conf = 0.7, target = "maximally frequent itemsets"))
+inspect(maximally_frequent_itemsets)
+
+
+rules_itemset_appearance <- apriori(trans,parameter = list(supp = 0.1, conf = 0.7, target = "rules"), appearance = list(rhs = 'Species=setosa'))
+inspect(rules_itemset_appearance)
+
+### discretize all numeric columns differently
+irisDisc <- discretizeDF(iris_vn, default = list(method = "interval", breaks = 2, labels = c("small", "large")))
+head(irisDisc)
+trans1 <- transactions(irisDisc)
+frequent_itemsets <- apriori(trans1,parameter = list(supp = 0.1, conf = 0.7, target = "rules"), appearance = list(rhs = 'Species=setosa'))
+inspect(frequent_itemsets)
+```
+
+
+
+# APPRENTISAGE SUPERVISÉ
+
+### Definition des critères de choix d'un bon projet.
+
+|terme|définition|
+|:---:|:--------:|
+|__précision d'une variable__| c'est l'élément de la diagonale de la colonne divisé par la somme des element de la colonne|
+|__précision d'un jeu de données__| c'est la moyenne des précisions des différentes variables du jeu de donnée|
+|__rappel d'une variable__| c'est l'élément de la diagonale de la ligne divisé par la somme des elements de la ligne|
+|__rappel d'un jeu de données__| c'est la moyenne des rappels des différentes variables du jeu de données|
+|__f messure__| c'est le rapport de deux fois le rappel fois la precision par rapport à la somme rappel, précision|
+|__accurancy__| c'est la somme des éléments de la diagonal divisé par la sommes de tous les éléments du dataset|
+
+```{r}
+# get caracteristics
+
+caracterize_vn <- function(M){
+  dataset_precision <- 0
+  dataset_rapel <- 0
+  diag_sum <- 0
+  data_sum <- 0
+  
+  classe <- dim(M)[1]
+  for(i in 1:classe){
+    dataset_precision <- M[i,i]/sum(M[,i]) + dataset_precision
+    dataset_rapel <- M[i,i]/sum(M[i,]) + dataset_rapel
+    diag_sum <- M[i,i] + diag_sum
+    data_sum <- sum(M[i,]) + data_sum
+  }
+  
+  dataset_precision <- dataset_precision / classe
+  dataset_rapel <- dataset_rapel / classe
+  fmesure <- (2*dataset_rapel*dataset_precision)/(dataset_precision+dataset_rapel)
+  accurance <- diag_sum / data_sum
+  
+  return (list(precision=dataset_precision, rappel=dataset_rapel, fmesure=fmesure, accurancy = accurance))
+}
+
+```
+## reseau de neurones
+
+
+
+
+
+```{r}
+#install.packages('arulesViz')
+library('nnet')
+library('neuralnet')
+
+
+```
+
+
+
+```{r}
+data('iris')
+iris1 = iris
+
+# binarisation de la classe Species
+iris1 <- cbind(iris1, iris1$Species == 'setosa')
+iris1 <- cbind(iris1, iris1$Species == 'versicolor')
+iris1 <- cbind(iris1, iris1$Species == 'virginica')
+names(iris1)[6] = 'setosa'
+names(iris1)[7] = 'versicolor'
+names(iris1)[8] = 'virginica'
+
+# diviser en une partie d'apprentissage et une partie de test
+V = sample(nrow(iris1), 2*nrow(iris1)/3)
+iris1train = iris1[V,]
+iris1test = iris1[-V,]
+
+
+```
+
+
+```{r}
+# construction du model et affichage
+nn <- neuralnet(setosa+versicolor+virginica ~ Sepal.Length+Sepal.Width+Petal.Length+Petal.Width, data=iris1train, hidden = c(3) )
+plot(nn)
+#model <- nnet(species ~ ., iris_vn1, size=10)
+```
+
+
+
+**WTA** : Le neuronne ayant la plus grande fonction d'activation est à 1
+
+**c(1)** : dans la function apply permet de dire d'appliquer la function passé en paramètre suivant les lignes
+
+**c(2)** : dans la function apply permet de dire d'appliquer la function passé en paramètre suivant les colonnes
+
+```{r}
+# prediction
+mypredict <- compute(nn, iris1[c(1:4)])$net.result
+maxidx <- function(arr){return(which(arr == max(arr)))}
+idx <- apply(mypredict, c(1), maxidx)
+
+prediction <- c('setosa','versicolor','virginica')[idx]
+table(prediction,iris$Species)
+
+```
+
+
+```{r}
+prediction
+```
+
+
+
+
+

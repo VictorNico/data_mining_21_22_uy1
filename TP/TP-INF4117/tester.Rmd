@@ -1,0 +1,37 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+source("storage.R")
+source("helpers.R")
+library(rattle)
+library(RColorBrewer)
+library(rpart)
+library(rpart.plot)
+```
+
+```{r}
+data <- read.csv(file.path(results_dir, "20220111-114721_20220111-080351_20220111-080257_20220111-080155_20220111-080125_Simulated_Data_set_of_Iraqi_tourism_places.csv.csvselection.csvna.csvselection.csvselection.csv"),header=TRUE, stringsAsFactors = FALSE)
+V = sample(nrow(data), 2*nrow(data)/3)
+train = data[V,]
+test = data[-V,]
+```
+
+
+```{r}
+print(train)
+```
+
+```{r}
+mytree <- rpart(Place.names ~ ., data = train, method = "class")
+print(mytree)
+
+```
+
+
+```{r}
+fancyRpartPlot(mytree, caption = NULL)
+```

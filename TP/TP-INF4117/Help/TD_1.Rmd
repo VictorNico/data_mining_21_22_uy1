@@ -1,0 +1,227 @@
+---
+title: "TD 1 DATA MINING"
+output: html_notebook
+---
+
+# Mode getter function for data
+
+```{r}
+getmode <- function(v){
+  uniqv <- unique(v)
+  uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+
+getmode(c("a","a","b"))
+```
+
+# Exercice 1
+
+##### Data definition
+```{r}
+exo1_var <- c(13,15, 16, 16, 19, 20, 20, 21, 22, 22, 25, 25, 25, 25, 30, 33, 33, 35, 35, 35, 35, 36, 40, 45, 46, 52, 70)
+```
+##### Quelle est la moyenne de cette distribution, quelle est la médiane ?
+```{r}
+exo1_mean <- mean(exo1_var)
+exo1_sd <- sd(exo1_var)
+exo1_meadian <- median(exo1_var)
+# print mean
+exo1_mean
+# print sd
+exo1_sd
+exo1_meadian
+#exo1_var1 <- c(1,2,2,3,4,4,4,5,6,6,6,6)
+#exo1_meadian1 <- median(exo1_var1)
+#exo1_meadian1
+```
+##### Quel est le mode ? Commenter ce mode (bimodal, trimodal, etc)
+```{r}
+# using our last custom function or method
+exo1_mode <- getmode(exo1_var)
+# print mode
+exo1_mode
+```
+##### Peut-on trouver le premier quartile, et le troisième quartile de ces données ?
+```{r}
+# yes using summary method
+exo1_sum <- summary(exo1_var)
+# print summary
+exo1_sum
+# better with
+exo1_1qt <- exo1_sum["1st Qu."]
+exo1_3qt <- exo1_sum["3rd Qu."]
+# print 1st quartile
+exo1_1qt
+# print 3rd quartile
+exo1_3qt
+```
+
+# Exercice 2
+
+##### Normalisez les données suivantes : 200, 300, 400, 600, 1000. Utiliser la normalisation min-max avec max=1 et min=0 ; et la normalisation z_score.
+```{r}
+exo2_var <- c(200, 300, 400, 600, 1000)
+#mean(exo2_var)
+```
+##### Definition de la methode Min-Max de normalisation sachant que (X – min(X))/(max(X) – min(X)) -> Min-Max Normalization.
+```{r}
+min_max_norm <- function(x, min, max) {
+  (x - min) / (max - min)
+}
+```
+##### Définition de la méthode z-score sachant que (X – μ) / σ -> Z-Score Standardization.
+```{r}
+exo2_z_score <- function(x){
+  (x - mean(x)) / sd(x)
+}
+```
+
+##### Apply Min-Max normalization to our dataset
+```{r}
+exo2_min_max_norm <- min_max_norm(exo2_var,0,1)
+# print min max normalization product
+exo2_min_max_norm
+```
+##### Apply z-score normalization to our dataset
+```{r}
+exo2_z_score_norm <- exo2_z_score(exo2_var)
+# print z-score normalisation
+exo2_z_score_norm
+```
+##### Arules libary testing
+```{r}
+#install script : install.packages("odbc")
+#load arules packages: library(arules)
+#doc : https://www.rdocumentation.org/packages/arules/versions/1.6-8
+#install arulesViz
+#install.packages("arulesViz")
+?apriori
+#https://www.rdocumentation.org/packages/arules/versions/1.6-8/topics/apriori
+#con <- DBI::dbConnect(odbc::odbc(),
+#                      Driver   = "[your driver's name]",
+#                      Server   = "[your server's path]",
+#                      Database = "[your database's name]",
+#                      UID      = rstudioapi::askForPassword("Database user"),
+#                      PWD      = rstudioapi::askForPassword("Databasepassword"),
+#                      Port     = 5432)
+# Connect to the default postgres database
+#con <- dbConnect(RPostgres::Postgres())
+#airport <- dbSendQuery(con, "SELECT * FROM airports WHERE faa = $1 or faa = $2")
+#dbBind(airport, list("GPT", "MSY"))
+#dbFetch(airport)
+# tuto : https://db.rstudio.com/getting-started/database-queries
+
+```
+
+# exercice 4
+```{r}
+exo1_var <- matrix(c(21, 23, 27, 27, 39, 41, 47, 49, 50, 52, 54, 57),c(9.5, 26.5, 7.8, 17.8, 31.4, 25.9, 27.4, 27.2, 31.2, 34.6, 42.5, 30))
+```
+##### Quelle est la moyenne de cette distribution, quelle est la médiane ?
+```{r}
+exo1_mean <- mean(exo1_var)
+exo1_sd <- sd(exo1_var)
+
+# print mean
+exo1_mean
+# print sd
+exo1_sd
+```
+##### Normalisez les données suivantes : 200, 300, 400, 600, 1000. Utiliser la normalisation min-max avec max=1 et min=0 ; et la normalisation z_score.
+```{r}
+exo2_var <- c(200, 300, 400, 600, 1000)
+```
+##### Definition de la methode Min-Max de normalisation sachant que (X – min(X))/(max(X) – min(X)) -> Min-Max Normalization.
+```{r}
+min_max_norm <- function(x, min, max) {
+  (x - min) / (max - min)
+}
+```
+##### Définition de la méthode z-score sachant que (X – μ) / σ -> Z-Score Standardization.
+```{r}
+exo2_z_score <- function(x){
+  (x - mean(x)) / sd(x)
+}
+```
+
+##### Apply Min-Max normalization to our dataset
+```{r}
+exo2_min_max_norm <- min_max_norm(exo2_var,0,1)
+# print min max normalization product
+exo2_min_max_norm
+```
+##### Apply z-score normalization to our dataset
+```{r}
+exo2_z_score_norm <- exo2_z_score(exo2_var)
+# print z-score normalisation
+exo2_z_score_norm
+```
+
+
+```{r}
+b <- data.frame(
+  a=c(1,0,1),
+  b=c(1,0,1),
+  c=c(0,0,1)
+)
+b <-  b==1
+inspect(as(b,"transactions"))
+```
+
+
+# Exercice 5
+```{r}
+# https://rpubs.com/lingyanzhou/examples-association-rules
+# NOT RUN {
+## Example 1: Create transaction data and mine association rules
+a_list <- list(
+      c("M", "O", "N", "K", "E", "Y"),
+      c("D", "O", "N", "K", "E", "Y"),
+      c("M", "A", "K", "E"),
+      c("M", "U", "C", "K", "Y"),
+      c("C", "O", "O", "K", "I", "E")
+      )
+
+## Set transaction names
+names(a_list) <- paste("Tr",c(1:5), sep = "")
+a_list
+
+## Use the constructor to create transactions
+trans1 <- transactions(a_list)
+trans1
+
+rules <- apriori(trans1,parameter = list(supp = 0.6, conf = 0.8, target = "rules"))
+inspect(rules)
+## Example 2: Mine association rules from an existing transactions dataset 
+##   using different minimum support and minimum confidence thresholds
+#data("Adult")
+
+#rules <- apriori(Adult, 
+	#parameter = list(supp = 0.5, conf = 0.9, target = "frequent itemsets"))
+#summary(rules)
+# }
+```
+
+
+```{r}
+
+frequent_itemsets <- apriori(trans1,parameter = list(supp = 0.6, conf = 0.8, target = "frequent itemsets"))
+inspect(frequent_itemsets)
+```
+
+```{r}
+
+```
+
+```{r}
+install.packages("shiny",dep=TRUE)
+#library(shiny)
+#runExample("01_hello")
+
+seq(1,7,length=3)
+```
+
+
+```{r}
+#library("DMwR")
+```
